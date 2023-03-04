@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="mazegui">
+    <output-path>$PROJECT_DIR$/out/artifacts/mazegui</output-path>
+    <root id="root">
+      <element id="archive" name="mazegui.jar">
+        <element id="module-output" name="mazegui" />
+      </element>
+    </root>
+  </artifact>
+</component>
