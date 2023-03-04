@@ -1,4 +1,4 @@
-# mazegui
+# Bats' JFX Maze Generation
  
 
 ## Recursive Maze Generation
