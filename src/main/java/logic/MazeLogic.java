@@ -33,149 +33,6 @@ public class MazeLogic {
         }
     }
 
-    private void setCell(int x, int y, Cell content) {
-        if (x < lengthX && y < lengthY && x >= 0 && y >= 0) {
-            map[x][y] = content;
-            gui.setCell(x, y, cellToHex(content));
-        }
-    }
-
-    public void setStone(int x, int y) {
-        setCell(x, y, Cell.STONE);
-    }
-
-    public int count(Cell content) {
-        int result = 0;
-        for (int x = 0; x < lengthX; x++) {
-            for (int y = 0; y < lengthY; y++) {
-                if (getCell(x, y) == content) {
-                    result++;
-                }
-            }
-        }
-        return result;
-    }
-
-    private Cell getCell(int x, int y) {
-        if (x < lengthX && x >= 0 && y < lengthY && y >= 0) {
-            return map[x][y];
-        } else {
-            return Cell.UNUSABLE; // Eventuell neue Enum machen: OUT_OF_MAP ?
-        }
-    }
-
-    private int[][] getNeighbours(int x, int y, Cell content) {
-        int numNeighbours = getNumberOfNeighbours(x, y, content);
-        int idx = 0;
-        int[][] result = new int[numNeighbours][2];
-
-        if (numNeighbours == 0) {
-            return null;
-        }
-
-        if (x > 0) {
-            if (map[x-1][y] == content) {
-                result[idx][0] = x-1;
-                result[idx][1] = y;
-                //System.out.println("c");
-                idx++;
-            }
-        }
-
-        if (x < lengthX - 1) {
-            if (map[x+1][y] == content) {
-                result[idx][0] = x+1;
-                result[idx][1] = y;
-                //System.out.println("b");
-                idx++;
-            }
-        }
-
-        if (y > 0) {
-            if (map[x][y-1] == content) {
-                result[idx][0] = x;
-                result[idx][1] = y-1;
-                //System.out.println("a");
-                idx++;
-            }
-        }
-
-        if (y < lengthY - 1) {
-            if (map[x][y+1] == content) {
-                result[idx][0] = x;
-                result[idx][1] = y+1;
-                //System.out.println("d");
-                idx++;
-            }
-        }
-
-        return result;
-    }
-
-    private int getNumberOfNeighbours(int x, int y, Cell content) {
-        int sum = 0;
-
-        if (x > 0) {
-            if (getCell(x-1, y) == content) {
-                sum++;
-            }
-        }
-
-        if (x < lengthX - 1) {
-            if (getCell(x+1, y) == content) {
-                sum++;
-            }
-        }
-
-        if (y > 0) {
-            if (getCell(x, y-1) == content) {
-                sum++;
-            }
-        }
-
-        if (y <= lengthY - 2) {
-            if (getCell(x, y+1) == content) {
-                sum++;
-            }
-        }
-
-        return sum;
-    }
-
-    private String cellToChar(Cell content) {
-        String result = "?";
-
-        if (content == Cell.EMPTY) {
-            result = ConsoleColors.BLACK + "██ " + ConsoleColors.RESET;
-        } else if (content == Cell.RECURSIVE) {
-            result = ConsoleColors.WHITE + "██ " + ConsoleColors.RESET;
-        } else if (content == Cell.NODE) {
-            result = ConsoleColors.GREEN + "██ " + ConsoleColors.RESET;
-        } else if (content == Cell.UNUSABLE) {
-            result = ConsoleColors.BLACK + "██ " + ConsoleColors.RESET;
-        }
-
-        return result;
-    }
-
-    private String cellToHex(Cell content) {
-        String result = "#FFFFFF";
-
-        if (content == Cell.EMPTY) {
-            result = "#FFFFFF";
-        } else if (content == Cell.RECURSIVE) {
-            result = "#c0392b"; // Red
-        } else if (content == Cell.NODE) {
-            result = "#27ae60"; // Green
-        } else if (content == Cell.UNUSABLE) {
-            result = "#FFFFFF";
-        } else if (content == Cell.STONE) {
-            result = "#000000";
-        }
-
-        return result;
-    }
-
     public void generateMazeEmpty() {
         gui.setAlgorithm("None");
         gui.setSeed(0);
@@ -366,19 +223,19 @@ public class MazeLogic {
             for (int x = 0; x < lengthX; x += 2) {
                 for (int y = 0; y < lengthY; y += 2) {
 
-                   animate = false;
+                    animate = false;
 
-                   if (getCell(x, y) == Cell.EMPTY) {
-                       setCell(x,y, Cell.NODE);
+                    if (getCell(x, y) == Cell.EMPTY) {
+                        setCell(x,y, Cell.NODE);
 
-                       int choice = rand.nextInt(2);
-                       int neighbourX = x + choice;
-                       int neighbourY = y + 1 - choice;
+                        int choice = rand.nextInt(2);
+                        int neighbourX = x + choice;
+                        int neighbourY = y + 1 - choice;
 
-                       setCell(neighbourX, neighbourY, Cell.NODE);
+                        setCell(neighbourX, neighbourY, Cell.NODE);
 
-                       animate = true;
-                   }
+                        animate = true;
+                    }
 
                     try {
                         if (animate) {
@@ -452,6 +309,149 @@ public class MazeLogic {
 
         }).start();
 
+    }
+
+    private void setCell(int x, int y, Cell content) {
+        if (x < lengthX && y < lengthY && x >= 0 && y >= 0) {
+            map[x][y] = content;
+            gui.setCell(x, y, cellToHex(content));
+        }
+    }
+
+    public void setStone(int x, int y) {
+        setCell(x, y, Cell.STONE);
+    }
+
+    public int count(Cell content) {
+        int result = 0;
+        for (int x = 0; x < lengthX; x++) {
+            for (int y = 0; y < lengthY; y++) {
+                if (getCell(x, y) == content) {
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
+
+    private Cell getCell(int x, int y) {
+        if (x < lengthX && x >= 0 && y < lengthY && y >= 0) {
+            return map[x][y];
+        } else {
+            return Cell.UNUSABLE; // Eventuell neue Enum machen: OUT_OF_MAP ?
+        }
+    }
+
+    private int[][] getNeighbours(int x, int y, Cell content) {
+        int numNeighbours = getNumberOfNeighbours(x, y, content);
+        int idx = 0;
+        int[][] result = new int[numNeighbours][2];
+
+        if (numNeighbours == 0) {
+            return null;
+        }
+
+        if (x > 0) {
+            if (map[x-1][y] == content) {
+                result[idx][0] = x-1;
+                result[idx][1] = y;
+                //System.out.println("c");
+                idx++;
+            }
+        }
+
+        if (x < lengthX - 1) {
+            if (map[x+1][y] == content) {
+                result[idx][0] = x+1;
+                result[idx][1] = y;
+                //System.out.println("b");
+                idx++;
+            }
+        }
+
+        if (y > 0) {
+            if (map[x][y-1] == content) {
+                result[idx][0] = x;
+                result[idx][1] = y-1;
+                //System.out.println("a");
+                idx++;
+            }
+        }
+
+        if (y < lengthY - 1) {
+            if (map[x][y+1] == content) {
+                result[idx][0] = x;
+                result[idx][1] = y+1;
+                //System.out.println("d");
+                idx++;
+            }
+        }
+
+        return result;
+    }
+
+    private int getNumberOfNeighbours(int x, int y, Cell content) {
+        int sum = 0;
+
+        if (x > 0) {
+            if (getCell(x-1, y) == content) {
+                sum++;
+            }
+        }
+
+        if (x < lengthX - 1) {
+            if (getCell(x+1, y) == content) {
+                sum++;
+            }
+        }
+
+        if (y > 0) {
+            if (getCell(x, y-1) == content) {
+                sum++;
+            }
+        }
+
+        if (y <= lengthY - 2) {
+            if (getCell(x, y+1) == content) {
+                sum++;
+            }
+        }
+
+        return sum;
+    }
+
+    private String cellToChar(Cell content) {
+        String result = "?";
+
+        if (content == Cell.EMPTY) {
+            result = ConsoleColors.BLACK + "██ " + ConsoleColors.RESET;
+        } else if (content == Cell.RECURSIVE) {
+            result = ConsoleColors.WHITE + "██ " + ConsoleColors.RESET;
+        } else if (content == Cell.NODE) {
+            result = ConsoleColors.GREEN + "██ " + ConsoleColors.RESET;
+        } else if (content == Cell.UNUSABLE) {
+            result = ConsoleColors.BLACK + "██ " + ConsoleColors.RESET;
+        }
+
+        return result;
+    }
+
+    private String cellToHex(Cell content) {
+        String result = "#FFFFFF";
+
+        if (content == Cell.EMPTY) {
+            result = "#FFFFFF";
+        } else if (content == Cell.RECURSIVE) {
+            result = "#c0392b"; // Red
+        } else if (content == Cell.NODE) {
+            result = "#27ae60"; // Green
+        } else if (content == Cell.UNUSABLE) {
+            result = "#FFFFFF";
+        } else if (content == Cell.STONE) {
+            result = "#000000";
+        }
+
+        return result;
     }
 
     public void printMap() {
