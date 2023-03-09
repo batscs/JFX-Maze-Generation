@@ -1,8 +1,8 @@
 package logic;
 
-import javafx.application.Platform;
+import gui.JavaFXGUI;
+import javafx.scene.paint.Color;
 
-import java.time.Instant;
 import java.util.*;
 
 public class MazeLogic {
@@ -18,9 +18,9 @@ public class MazeLogic {
         STONE, EMPTY, UNUSABLE, NODE, RECURSIVE;
     }
 
-    public MazeLogic(int x, int y, GUIConnector gui) {
-        lengthX = x;
-        lengthY = y;
+    public MazeLogic(GUIConnector gui) {
+        lengthX = gui.getSizeX();
+        lengthY = gui.getSizeY();
         this.gui = gui;
 
         map = new Cell[lengthX][lengthY];
@@ -46,7 +46,7 @@ public class MazeLogic {
 
     public void generateMazeRecursively(int delay) {
 
-        gui.setAlgorithm("Recursively");
+        gui.setAlgorithm("Recursively \nSize: " + lengthX + " x " + lengthY);
 
         Random rand = new Random();
         long seed = rand.nextLong();;
@@ -74,7 +74,8 @@ public class MazeLogic {
                 boolean animate = false;
 
                 if (getCell(x, y) == Cell.EMPTY) {
-                    if (getNumberOfNeighbours(x, y, Cell.NODE) + getNumberOfNeighbours(x, y, Cell.RECURSIVE) <= 1) {
+                    if (getNumberOfNeighbours(x, y, Cell.NODE) + getNumberOfNeighbours(x, y, Cell.RECURSIVE) <= 1
+                            && getNumberOfNeighboursBig(x,y, Cell.NODE) + getNumberOfNeighboursBig(x, y, Cell.RECURSIVE) <= 3) {
                         stack.push(new int[] {x, y});
                         setCell(x, y, Cell.RECURSIVE);
                         animate = true;
@@ -112,13 +113,12 @@ public class MazeLogic {
                 }
 
                 // Wait for Animation
-                try {
-                    if (animate) {
-                        Thread.sleep(delay);
-                        //gui.setCell(x, y, "FFA500");
+                if (animate && delay > 0) {
+                    try {
+                            Thread.sleep(delay);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
                 }
 
             } while (!stack.isEmpty());
@@ -205,6 +205,10 @@ public class MazeLogic {
 
     }
 
+    private int makeEvenNumberNextSmallest(int num) {
+        return num % 2 == 0 ? num : num -1 ;
+    }
+
     public void generateMazeBinaryTree(int delay) {
 
         gui.setAlgorithm("Binary Tree");
@@ -220,8 +224,8 @@ public class MazeLogic {
 
             boolean animate;
 
-            for (int x = 0; x < lengthX; x += 2) {
-                for (int y = 0; y < lengthY; y += 2) {
+            for (int y = 0; y < lengthY; y += 2) {
+                for (int x = 0; x < lengthX; x += 2) {
 
                     animate = false;
 
@@ -248,19 +252,27 @@ public class MazeLogic {
                 }
             }
 
+            // x-Achse Border (unten)
             for (int x = 0; x < lengthX; x++) {
-                for (int y = 0; y < lengthY; y++) {
+                setCell(x, makeEvenNumberNextSmallest(lengthY - 1), Cell.NODE);
+                setCell(x, makeEvenNumberNextSmallest(lengthY - 1) + 1, Cell.EMPTY);
 
-                    if (x == lengthX - 1 || y == lengthY - 1) {
-                        setCell(x, y, Cell.NODE);
+                try {
+                    Thread.sleep(delay);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
-                        try {
-                            Thread.sleep(delay);
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
+            // y-Achse Border (links)
+            for (int y = 0; y < lengthY; y++) {
+                setCell(makeEvenNumberNextSmallest(lengthX - 1), y, Cell.NODE);
+                setCell(makeEvenNumberNextSmallest(lengthX - 1) + 1, y, Cell.EMPTY);
 
+                try {
+                    Thread.sleep(delay);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
             }
 
@@ -314,7 +326,7 @@ public class MazeLogic {
     private void setCell(int x, int y, Cell content) {
         if (x < lengthX && y < lengthY && x >= 0 && y >= 0) {
             map[x][y] = content;
-            gui.setCell(x, y, cellToHex(content));
+            gui.setCell(x, y, cellToColor(content));
         }
     }
 
@@ -420,6 +432,44 @@ public class MazeLogic {
         return sum;
     }
 
+    private int getNumberOfNeighboursBig(int x, int y, Cell content) {
+        int sum = 0;
+
+        if (getCell(x+1, y+1) == content) {
+            sum++;
+        }
+
+        if (getCell(x+1, y) == content) {
+            sum++;
+        }
+
+        if (getCell(x+1, y-1) == content) {
+            sum++;
+        }
+
+        if (getCell(x, y-1) == content) {
+            sum++;
+        }
+
+        if (getCell(x-1, y-1) == content) {
+            sum++;
+        }
+
+        if (getCell(x-1, y) == content) {
+            sum++;
+        }
+
+        if (getCell(x-1, y+1) == content) {
+            sum++;
+        }
+
+        if (getCell(x, y+1) == content) {
+            sum++;
+        }
+
+        return sum;
+    }
+
     private String cellToChar(Cell content) {
         String result = "?";
 
@@ -436,19 +486,19 @@ public class MazeLogic {
         return result;
     }
 
-    private String cellToHex(Cell content) {
-        String result = "#FFFFFF";
+    private Color cellToColor(Cell content) {
+        Color result = Color.BLACK;
 
         if (content == Cell.EMPTY) {
-            result = "#FFFFFF";
+            result = Color.BLACK;
         } else if (content == Cell.RECURSIVE) {
-            result = "#c0392b"; // Red
+            result = new Color((float) 192 / 255, (float)  57 / 255, (float) 43 / 255, 1); // Red
         } else if (content == Cell.NODE) {
-            result = "#27ae60"; // Green
+            result = new Color((float) 39 / 255, (float) 174 / 255, (float) 96 / 255, 1); // Green
         } else if (content == Cell.UNUSABLE) {
-            result = "#FFFFFF";
+            result = Color.BLACK;
         } else if (content == Cell.STONE) {
-            result = "#000000";
+            result = new Color((float) 32 / 255, (float) 32 / 255, (float) 32 / 255, 1); // Gray (Stone)
         }
 
         return result;

@@ -1,330 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UserInterfaceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.UserInterfaceController">
    <center>
-      <GridPane fx:id="gridPaneField" minHeight="400.0" minWidth="600.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <children>
-            <Button fx:id="btn1x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Button fx:id="btn0x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Button fx:id="btn0x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Button fx:id="btn1x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="btn0x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Button fx:id="btn1x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="btn0x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Button fx:id="btn1x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="btn2x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="btn3x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button fx:id="btn2x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="btn2x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="btn2x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Button fx:id="btn3x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="btn3x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Button fx:id="btn3x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button fx:id="btn0x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <Button fx:id="btn1x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="btn2x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button fx:id="btn3x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Button fx:id="btn3x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Button fx:id="btn2x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Button fx:id="btn1x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Button fx:id="btn0x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <Button fx:id="btn0x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <Button fx:id="btn0x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <Button fx:id="btn0x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <Button fx:id="btn0x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-            <Button fx:id="btn0x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="10" />
-            <Button fx:id="btn0x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="11" />
-            <Button fx:id="btn0x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="12" />
-            <Button fx:id="btn1x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <Button fx:id="btn1x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <Button fx:id="btn1x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <Button fx:id="btn1x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Button fx:id="btn1x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Button fx:id="btn1x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Button fx:id="btn1x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button fx:id="btn2x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Button fx:id="btn3x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Button fx:id="btn2x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Button fx:id="btn2x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Button fx:id="btn2x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <Button fx:id="btn2x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-            <Button fx:id="btn2x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-            <Button fx:id="btn2x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-            <Button fx:id="btn3x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Button fx:id="btn3x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Button fx:id="btn3x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Button fx:id="btn3x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-            <Button fx:id="btn3x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-            <Button fx:id="btn3x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-            <Button fx:id="btn4x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Button fx:id="btn5x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Button fx:id="btn6x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-            <Button fx:id="btn7x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-            <Button fx:id="btn8x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="0" />
-            <Button fx:id="btn9x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="0" />
-            <Button fx:id="btn10x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="0" />
-            <Button fx:id="btn11x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="0" />
-            <Button fx:id="btn12x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="0" />
-            <Button fx:id="btn4x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button fx:id="btn5x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button fx:id="btn6x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Button fx:id="btn7x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button fx:id="btn8x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button fx:id="btn9x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <Button fx:id="btn10x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-            <Button fx:id="btn11x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="1" />
-            <Button fx:id="btn12x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="1" />
-            <Button fx:id="btn4x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button fx:id="btn5x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button fx:id="btn6x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Button fx:id="btn7x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Button fx:id="btn8x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Button fx:id="btn9x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-            <Button fx:id="btn10x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-            <Button fx:id="btn11x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="2" />
-            <Button fx:id="btn12x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="2" />
-            <Button fx:id="btn4x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Button fx:id="btn4x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Button fx:id="btn5x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Button fx:id="btn6x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Button fx:id="btn7x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Button fx:id="btn8x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <Button fx:id="btn9x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-            <Button fx:id="btn10x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="3" />
-            <Button fx:id="btn11x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="3" />
-            <Button fx:id="btn12x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="3" />
-            <Button fx:id="btn12x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="12" />
-            <Button fx:id="btn12x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="11" />
-            <Button fx:id="btn12x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="10" />
-            <Button fx:id="btn12x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="9" />
-            <Button fx:id="btn12x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="8" />
-            <Button fx:id="btn12x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="7" />
-            <Button fx:id="btn12x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="6" />
-            <Button fx:id="btn12x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="5" />
-            <Button fx:id="btn12x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="4" />
-            <Button fx:id="btn11x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="12" />
-            <Button fx:id="btn10x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="12" />
-            <Button fx:id="btn9x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="12" />
-            <Button fx:id="btn8x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="12" />
-            <Button fx:id="btn7x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="12" />
-            <Button fx:id="btn6x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="12" />
-            <Button fx:id="btn5x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="12" />
-            <Button fx:id="btn4x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="12" />
-            <Button fx:id="btn4x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="11" />
-            <Button fx:id="btn4x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-            <Button fx:id="btn4x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <Button fx:id="btn4x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <Button fx:id="btn4x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <Button fx:id="btn4x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Button fx:id="btn4x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Button fx:id="btn5x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Button fx:id="btn6x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Button fx:id="btn7x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Button fx:id="btn8x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-            <Button fx:id="btn9x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-            <Button fx:id="btn10x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="4" />
-            <Button fx:id="btn11x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="4" />
-            <Button fx:id="btn5x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Button fx:id="btn5x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <Button fx:id="btn5x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <Button fx:id="btn5x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <Button fx:id="btn5x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Button fx:id="btn5x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-            <Button fx:id="btn5x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="11" />
-            <Button fx:id="btn6x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="11" />
-            <Button fx:id="btn7x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="11" />
-            <Button fx:id="btn8x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="11" />
-            <Button fx:id="btn9x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="11" />
-            <Button fx:id="btn10x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="11" />
-            <Button fx:id="btn11x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="11" />
-            <Button fx:id="btn11x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="10" />
-            <Button fx:id="btn11x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="9" />
-            <Button fx:id="btn11x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="8" />
-            <Button fx:id="btn11x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="7" />
-            <Button fx:id="btn11x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="6" />
-            <Button fx:id="btn11x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="5" />
-            <Button fx:id="btn9x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-            <Button fx:id="btn10x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-            <Button fx:id="btn8x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-            <Button fx:id="btn6x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Button fx:id="btn7x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <Button fx:id="btn6x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-            <Button fx:id="btn7x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-            <Button fx:id="btn8x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-            <Button fx:id="btn9x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="6" />
-            <Button fx:id="btn10x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="6" />
-            <Button fx:id="btn10x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="7" />
-            <Button fx:id="btn10x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="8" />
-            <Button fx:id="btn10x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="9" />
-            <Button fx:id="btn10x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="10" />
-            <Button fx:id="btn9x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="10" />
-            <Button fx:id="btn7x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-            <Button fx:id="btn8x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="10" />
-            <Button fx:id="btn6x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-            <Button fx:id="btn9x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-            <Button fx:id="btn9x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-            <Button fx:id="btn9x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="7" />
-            <Button fx:id="btn8x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-            <Button fx:id="btn6x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <Button fx:id="btn7x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <Button fx:id="btn6x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <Button fx:id="btn7x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-            <Button fx:id="btn8x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-            <Button fx:id="btn6x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-            <Button fx:id="btn7x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-            <Button fx:id="btn8x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-            <Button fx:id="btn13x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="0" />
-            <Button fx:id="btn14x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="0" />
-            <Button fx:id="btn15x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="0" />
-            <Button fx:id="btn16x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="0" />
-            <Button fx:id="btn17x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="0" />
-            <Button fx:id="btn13x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="1" />
-            <Button fx:id="btn14x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="1" />
-            <Button fx:id="btn15x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="1" />
-            <Button fx:id="btn16x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="1" />
-            <Button fx:id="btn17x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="1" />
-            <Button fx:id="btn13x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="2" />
-            <Button fx:id="btn14x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="2" />
-            <Button fx:id="btn15x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="2" />
-            <Button fx:id="btn16x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="2" />
-            <Button fx:id="btn17x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="2" />
-            <Button fx:id="btn13x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="3" />
-            <Button fx:id="btn14x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="3" />
-            <Button fx:id="btn15x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="3" />
-            <Button fx:id="btn16x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="3" />
-            <Button fx:id="btn17x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="3" />
-            <Button fx:id="btn13x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="4" />
-            <Button fx:id="btn14x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="4" />
-            <Button fx:id="btn15x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="4" />
-            <Button fx:id="btn16x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="4" />
-            <Button fx:id="btn17x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="4" />
-            <Button fx:id="btn13x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="5" />
-            <Button fx:id="btn14x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="5" />
-            <Button fx:id="btn15x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="5" />
-            <Button fx:id="btn16x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="5" />
-            <Button fx:id="btn17x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="5" />
-            <Button fx:id="btn13x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="6" />
-            <Button fx:id="btn14x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="6" />
-            <Button fx:id="btn15x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="6" />
-            <Button fx:id="btn16x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="6" />
-            <Button fx:id="btn17x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="6" />
-            <Button fx:id="btn13x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="7" />
-            <Button fx:id="btn14x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="7" />
-            <Button fx:id="btn15x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="7" />
-            <Button fx:id="btn16x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="7" />
-            <Button fx:id="btn17x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="7" />
-            <Button fx:id="btn13x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="8" />
-            <Button fx:id="btn14x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="8" />
-            <Button fx:id="btn15x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="8" />
-            <Button fx:id="btn16x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="8" />
-            <Button fx:id="btn17x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="8" />
-            <Button fx:id="btn13x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="9" />
-            <Button fx:id="btn14x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="9" />
-            <Button fx:id="btn15x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="9" />
-            <Button fx:id="btn16x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="9" />
-            <Button fx:id="btn17x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="9" />
-            <Button fx:id="btn13x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="10" />
-            <Button fx:id="btn14x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="10" />
-            <Button fx:id="btn15x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="10" />
-            <Button fx:id="btn16x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="10" />
-            <Button fx:id="btn17x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="10" />
-            <Button fx:id="btn13x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="11" />
-            <Button fx:id="btn14x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="11" />
-            <Button fx:id="btn15x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="11" />
-            <Button fx:id="btn16x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="11" />
-            <Button fx:id="btn17x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="11" />
-            <Button fx:id="btn13x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="12" />
-            <Button fx:id="btn14x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="12" />
-            <Button fx:id="btn15x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="12" />
-            <Button fx:id="btn16x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="12" />
-            <Button fx:id="btn17x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="12" />
-            <Button fx:id="btn18x0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="0" />
-            <Button fx:id="btn18x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="1" />
-            <Button fx:id="btn18x2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="2" />
-            <Button fx:id="btn18x3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="3" />
-            <Button fx:id="btn18x4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="4" />
-            <Button fx:id="btn18x5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="5" />
-            <Button fx:id="btn18x6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="6" />
-            <Button fx:id="btn18x7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="7" />
-            <Button fx:id="btn18x8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="8" />
-            <Button fx:id="btn18x9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="9" />
-            <Button fx:id="btn18x10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="10" />
-            <Button fx:id="btn18x11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="11" />
-            <Button fx:id="btn18x12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnFieldInteraction" text="Button" GridPane.columnIndex="18" GridPane.rowIndex="12" />
+            <Canvas fx:id="cnvGame" height="510.0" width="800.0">
 
-            <!-- // Neue Reihe Unten angefangen aber useless merke ich
-            <Button fx:id="btn0x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="13" />
-            <Button fx:id="btn1x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <Button fx:id="btn2x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-            <Button fx:id="btn3x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="13" />
-            <Button fx:id="btn4x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="4" GridPane.rowIndex="13" />
-            <Button fx:id="btn5x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="5" GridPane.rowIndex="13" />
-            <Button fx:id="btn6x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="6" GridPane.rowIndex="13" />
-            <Button fx:id="btn7x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="7" GridPane.rowIndex="13" />
-            <Button fx:id="btn8x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="8" GridPane.rowIndex="13" />
-            <Button fx:id="btn9x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="9" GridPane.rowIndex="13" />
-            <Button fx:id="btn10x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="10" GridPane.rowIndex="13" />
-            <Button fx:id="btn11x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="11" GridPane.rowIndex="13" />
-            <Button fx:id="btn12x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="12" GridPane.rowIndex="13" />
-            <Button fx:id="btn13x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="13" GridPane.rowIndex="13" />
-            <Button fx:id="btn14x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="14" GridPane.rowIndex="13" />
-            <Button fx:id="btn15x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="15" GridPane.rowIndex="13" />
-            <Button fx:id="btn16x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="16" GridPane.rowIndex="13" />
-            <Button fx:id="btn17x13" mnemonicParsing="false" text="Button" GridPane.columnIndex="17" GridPane.rowIndex="13" />
-            -->
+      </Canvas>
          </children>
-      </GridPane>
+      </Pane>
    </center>
    <left>
       <BorderPane fx:id="controls" style="-fx-background-color: #EAEAEA;" BorderPane.alignment="CENTER">
          <bottom>
             <VBox fx:id="vbxConfiguration" BorderPane.alignment="CENTER">
                <children>
+                  <Label alignment="BOTTOM_CENTER" layoutX="28.0" layoutY="160.0" maxWidth="1.7976931348623157E308" text="Configure Maze Size">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </VBox.margin>
+                     <TextField fx:id="inptSize" alignment="TOP_LEFT" maxWidth="80.0">
+                        <padding>
+                           <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                        </padding>
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                        </VBox.margin>
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </TextField>
+                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleBtnChangeSize" text="Submit">
+                        <padding>
+                           <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                        </padding>
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                        </VBox.margin>
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" />
+                        </HBox.margin>
+                     </Button>
+                  </HBox>
 
                   <Label alignment="BOTTOM_CENTER" maxWidth="1.7976931348623157E308" text="Animation Delay in ms">
                      <VBox.margin>
-                        <Insets left="18.0" right="20.0" top="50.0" />
+                        <Insets left="18.0" right="20.0" top="20.0" />
                      </VBox.margin>
                      <font>
                         <Font size="13.0" />
@@ -336,7 +74,7 @@
                         <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="5.0" />
                      </VBox.margin>
                      <font>
                         <Font size="13.0" />
@@ -356,7 +94,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnResetMaze" text="Reset Maze">
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBtnResetMaze" text="Reset Maze">
                      <padding>
                         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                      </padding>
@@ -456,7 +194,7 @@
             </Button>
          </bottom>
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="130.0" BorderPane.alignment="CENTER">
                <children>
                   <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Information">
                      <VBox.margin>

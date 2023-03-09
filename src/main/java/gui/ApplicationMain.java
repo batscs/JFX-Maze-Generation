@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Class that starts our application.
  *
- * @author mjo
+ * @author github.com/batscs
  */
 public class ApplicationMain extends Application {
 
@@ -24,9 +24,10 @@ public class ApplicationMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ApplicationMain.class.getResource("UserInterface.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1020, 500);
-        stage.setTitle("Bats' Maze Generation v1.0");
+        Scene scene = new Scene(fxmlLoader.load(), 1180, 570);
+        stage.setTitle("Bats' Maze Generation v1.1");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
