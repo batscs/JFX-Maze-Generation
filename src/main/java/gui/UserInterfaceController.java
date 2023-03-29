@@ -15,6 +15,7 @@ import logic.MazeLogic;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Main class for the user interface.
@@ -75,13 +76,27 @@ public class UserInterfaceController implements Initializable {
         int sizeX = Integer.parseInt(inptSize.getText());
         int sizeY = (int) Math.floor(sizeX * formFactor);
 
-        this.gui = new JavaFXGUI(cnvGame, sizeX, sizeY, controls, vbxConfiguration, lblAlgorithm, lblSeed);
+        this.gui = new JavaFXGUI(cnvGame, sizeX, sizeY, controls, vbxConfiguration, lblAlgorithm, lblSeed, game);
         this.game = new MazeLogic(gui);
 
         this.gui.setAlgorithm("None");
         this.gui.setSeed(0);
 
         overdrawCanvas();
+
+        cnvGame.setOnMouseDragged(event -> {
+            double coordX = event.getX();
+            double coordY = event.getY();
+            double cellSize = gui.getCellSize();
+
+            int cellX = (int) (coordX / cellSize);
+            int cellY = (int) (coordY / cellSize);
+
+            if (mode == "stone") {
+                game.setStone(cellX, cellY);
+            }
+
+        });
     }
 
     private void overdrawCanvas() {
@@ -113,7 +128,7 @@ public class UserInterfaceController implements Initializable {
 
     @FXML
     private void handleBtnRecursiveMaze(ActionEvent actionEvent) throws InterruptedException {
-        if (this.game.count(MazeLogic.Cell.NODE) > 0) {
+        if (this.game.countNeighbours(MazeLogic.Cell.NODE) > 0) {
             this.game.generateMazeEmpty();
             fullReset();
         }
@@ -131,7 +146,7 @@ public class UserInterfaceController implements Initializable {
 
     @FXML
     private void handleBtnKruskalMaze(ActionEvent actionEvent) {
-        if (this.game.count(MazeLogic.Cell.NODE) > 0) {
+        if (this.game.countNeighbours(MazeLogic.Cell.NODE) > 0) {
             this.game.generateMazeEmpty();
             fullReset();
         }
@@ -140,7 +155,7 @@ public class UserInterfaceController implements Initializable {
 
     @FXML
     private void handleBtnRandomBranchesMaze(ActionEvent actionEvent) {
-        if (this.game.count(MazeLogic.Cell.NODE) > 0) {
+        if (this.game.countNeighbours(MazeLogic.Cell.NODE) > 0) {
             this.game.generateMazeEmpty();
             fullReset();
         }
@@ -149,7 +164,7 @@ public class UserInterfaceController implements Initializable {
 
     @FXML
     private void handleBtnBinaryTreeMaze(ActionEvent actionEvent) {
-        if (this.game.count(MazeLogic.Cell.NODE) > 0) {
+        if (this.game.countNeighbours(MazeLogic.Cell.NODE) > 0) {
             this.game.generateMazeEmpty();
             fullReset();
         }

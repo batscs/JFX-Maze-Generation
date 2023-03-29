@@ -7,6 +7,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import logic.GUIConnector;
 import javafx.scene.canvas.Canvas;
+import logic.MazeLogic;
 
 public class JavaFXGUI implements GUIConnector {
 
@@ -25,7 +26,9 @@ public class JavaFXGUI implements GUIConnector {
 
     double cellSize;
 
-    public JavaFXGUI(Canvas field, int sizeX, int sizeY, BorderPane controls, VBox configuration, Label lblAlgo, Label lblSeed) {
+    private MazeLogic game;
+
+    public JavaFXGUI(Canvas field, int sizeX, int sizeY, BorderPane controls, VBox configuration, Label lblAlgo, Label lblSeed, MazeLogic game) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
         this.field = field;
@@ -36,6 +39,11 @@ public class JavaFXGUI implements GUIConnector {
 
         this.gc = field.getGraphicsContext2D();
         cellSize = field.getWidth() / sizeX;;
+
+    }
+
+    public double getCellSize() {
+        return cellSize;
     }
 
     @Override

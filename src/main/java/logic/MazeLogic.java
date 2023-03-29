@@ -1,7 +1,7 @@
 package logic;
 
-import gui.JavaFXGUI;
 import javafx.scene.paint.Color;
+import jdk.jfr.Event;
 
 import java.util.*;
 
@@ -15,7 +15,7 @@ public class MazeLogic {
     private final GUIConnector gui;
 
     public enum Cell {
-        STONE, EMPTY, UNUSABLE, NODE, RECURSIVE;
+        STONE, EMPTY, UNUSABLE, NODE, RECURSIVE, OUT_OF_MAP;
     }
 
     public MazeLogic(GUIConnector gui) {
@@ -74,8 +74,7 @@ public class MazeLogic {
                 boolean animate = false;
 
                 if (getCell(x, y) == Cell.EMPTY) {
-                    if (getNumberOfNeighbours(x, y, Cell.NODE) + getNumberOfNeighbours(x, y, Cell.RECURSIVE) <= 1
-                            && getNumberOfNeighboursBig(x,y, Cell.NODE) + getNumberOfNeighboursBig(x, y, Cell.RECURSIVE) <= 3) {
+                    if (getNumberOfNeighbours(x, y, Cell.NODE) + getNumberOfNeighbours(x, y, Cell.RECURSIVE) <= 1) {
                         stack.push(new int[] {x, y});
                         setCell(x, y, Cell.RECURSIVE);
                         animate = true;
@@ -86,7 +85,7 @@ public class MazeLogic {
                 }
 
                 if (getCell(x, y) == Cell.RECURSIVE || getCell(x, y) == Cell.NODE) {
-                    int[][] emptyNeighbours = getNeighbours(x, y, Cell.EMPTY);
+                    int[][] emptyNeighbours = zipNeighbours(x, y, Cell.EMPTY);
                     if (emptyNeighbours == null) {
                         fallback = true;
                     } else {
@@ -139,7 +138,6 @@ public class MazeLogic {
         rand.setSeed(seed);
         gui.setSeed(seed);
 
-
         new Thread(() -> {
 
             gui.lockControls(true);
@@ -176,7 +174,7 @@ public class MazeLogic {
                     setCell(x,y, Cell.UNUSABLE);
                 }
 
-                int[][] emptyNeighbours = getNeighbours(x, y, Cell.EMPTY);
+                int[][] emptyNeighbours = zipNeighbours(x, y, Cell.EMPTY);
 
                 if (emptyNeighbours != null) {
                     int idx = rand.nextInt(emptyNeighbours.length);
@@ -292,7 +290,7 @@ public class MazeLogic {
             Random rand = new Random();
             boolean animate = false;
 
-            while (count(Cell.EMPTY) > 0) {
+            while (countNeighbours(Cell.EMPTY) > 0) {
                 animate = false;
 
                 int x = rand.nextInt(lengthX);
@@ -334,7 +332,7 @@ public class MazeLogic {
         setCell(x, y, Cell.STONE);
     }
 
-    public int count(Cell content) {
+    public int countNeighbours(Cell content) {
         int result = 0;
         for (int x = 0; x < lengthX; x++) {
             for (int y = 0; y < lengthY; y++) {
@@ -350,11 +348,20 @@ public class MazeLogic {
         if (x < lengthX && x >= 0 && y < lengthY && y >= 0) {
             return map[x][y];
         } else {
-            return Cell.UNUSABLE; // Eventuell neue Enum machen: OUT_OF_MAP ?
+            return Cell.OUT_OF_MAP;
         }
     }
 
-    private int[][] getNeighbours(int x, int y, Cell content) {
+    private boolean notConstructingStairs(int x, int y, int oldX, int oldY) {
+        boolean noStairs = true;
+
+        int dirX = x - oldX;
+        int dirY = y - oldY;
+
+        return noStairs;
+    }
+
+    private int[][] zipNeighbours(int x, int y, Cell content) {
         int numNeighbours = getNumberOfNeighbours(x, y, content);
         int idx = 0;
         int[][] result = new int[numNeighbours][2];
@@ -363,40 +370,31 @@ public class MazeLogic {
             return null;
         }
 
-        if (x > 0) {
-            if (map[x-1][y] == content) {
-                result[idx][0] = x-1;
-                result[idx][1] = y;
-                //System.out.println("c");
-                idx++;
-            }
+        if (getCell(x-1, y) == content) {
+            result[idx][0] = x-1;
+            result[idx][1] = y;
+            idx++;
         }
 
-        if (x < lengthX - 1) {
-            if (map[x+1][y] == content) {
-                result[idx][0] = x+1;
-                result[idx][1] = y;
-                //System.out.println("b");
-                idx++;
-            }
+        if (getCell(x+1, y) == content) {
+            result[idx][0] = x+1;
+            result[idx][1] = y;
+            //System.out.println("b");
+            idx++;
         }
 
-        if (y > 0) {
-            if (map[x][y-1] == content) {
-                result[idx][0] = x;
-                result[idx][1] = y-1;
-                //System.out.println("a");
-                idx++;
-            }
+        if (getCell(x, y-1) == content) {
+            result[idx][0] = x;
+            result[idx][1] = y-1;
+            //System.out.println("a");
+            idx++;
         }
 
-        if (y < lengthY - 1) {
-            if (map[x][y+1] == content) {
-                result[idx][0] = x;
-                result[idx][1] = y+1;
-                //System.out.println("d");
-                idx++;
-            }
+        if (getCell(x, y+1) == content) {
+            result[idx][0] = x;
+            result[idx][1] = y+1;
+            //System.out.println("d");
+            idx++;
         }
 
         return result;
@@ -435,37 +433,59 @@ public class MazeLogic {
     private int getNumberOfNeighboursBig(int x, int y, Cell content) {
         int sum = 0;
 
+        System.out.println(x + " | " + y);
+
+        // Oben Rechts
         if (getCell(x+1, y+1) == content) {
             sum++;
+            System.out.println("a");
         }
 
+        // Rechts
+        /*
         if (getCell(x+1, y) == content) {
             sum++;
         }
+         */
 
+        // Unten Rechts
         if (getCell(x+1, y-1) == content) {
             sum++;
+            System.out.println("b");
         }
 
+        // Unten
+        /*
         if (getCell(x, y-1) == content) {
             sum++;
         }
+         */
 
+        // Unten Links
         if (getCell(x-1, y-1) == content) {
             sum++;
+            System.out.println("c");
         }
 
+        // Links
+        /*
         if (getCell(x-1, y) == content) {
             sum++;
         }
+         */
 
+        // Oben Links
         if (getCell(x-1, y+1) == content) {
             sum++;
+            System.out.println("d");
         }
 
+        // Oben
+        /*
         if (getCell(x, y+1) == content) {
             sum++;
         }
+         */
 
         return sum;
     }

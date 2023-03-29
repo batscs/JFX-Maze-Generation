@@ -25,7 +25,7 @@ public class ApplicationMain extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ApplicationMain.class.getResource("UserInterface.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1180, 570);
-        stage.setTitle("Bats' Maze Generation v1.1");
+        stage.setTitle("Bats' Maze Generation v1.2");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
